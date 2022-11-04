@@ -1,6 +1,6 @@
 <?php
 // conexion utiliza servidor-usuario-password-base de datos
-$conexion = mysqli_connect("localhost", "root", "", "sis_acad");
+$conexion = mysqli_connect("localhost", "root", "root", "sis_cad");
 if ($conexion) {
 
 } else {

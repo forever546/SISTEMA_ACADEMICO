@@ -54,7 +54,7 @@
                   </li>
                   <li><a><i class="fa fa-desktop"></i> Docentes <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="docente.php">Docente</a></li>
+                      <li><a href="docentes.php">Docente</a></li>
                       <li><a href="usuarios_docentes.php">Usuarios Docentes</a></li>
                     </ul>
                   </li>

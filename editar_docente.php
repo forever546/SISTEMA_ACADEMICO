@@ -2,6 +2,11 @@
 include "include/conexion.php";
 include "include/busquedas.php";
 include "include/verificar_sesion.php";
+
+$id_docente = $_GET['id'];
+$busc_docente = buscarDocenteById($conexion, $id_docente);
+$res_b_docente = mysqli_fetch_array($busc_docente);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
