@@ -38,7 +38,7 @@
                       <li><a href="presente_per_acad.php">Presente Periodo Académico</a></li>
                       <li><a href="programa_estudios1.php">Programa de Estudios</a></li>
                       <li><a href="modulo_formativo.php">Modulos formativos</a></li>
-                      <li><a href="semestre.php">Semestre</a></li>
+                      <li><a href="semestre1.php">Semestre</a></li>
                       <li><a href="unidad_didactica.php">Unidades didacticas</a></li>
                       <li><a href="cargo.php">Cargo</a></li>
                       <li><a href="genero.php">Género</a></li>
