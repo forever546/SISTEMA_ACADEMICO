@@ -13,7 +13,7 @@ if ($c_r_b_modulo_profecional == 0) {//validamos que no haya registros en la bas
 	$ejecutar_insetar = mysqli_query($conexion, $insertar);
     $b_id_modulo_profecional = buscarProgramaEstudios($conexion, $cod);
 	$res_b_modulo_profecional = mysqli_fetch_array($b_id_modulo_profecional);
-    $id_modulo_profecional = $res_b_modulo_profecional['id'];
+    $id_modulo_profecional = $res_b_modulo_profecional['id_programa_estudio'];
     
 	$ejec_insert_usu = mysqli_query($conexion, $insertar_usu);
 	if ($ejec_insert_usu) {
@@ -23,7 +23,7 @@ if ($c_r_b_modulo_profecional == 0) {//validamos que no haya registros en la bas
     			</script>";
 	}else{
 		echo "<script>
-			alert('Error al registrar programa de estudios');
+			alert('Error al registrar');
 			window.history.back();
 			</script>
 			";

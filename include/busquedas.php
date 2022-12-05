@@ -49,4 +49,13 @@ function buscarPeriodoAcademico($conexion){
     return mysqli_query($conexion, $sql);
 }
 
+function buscarModuloFormativo($conexion){
+    $sql = "SELECT * FROM modulo_formativo";
+    return mysqli_query($conexion, $sql);
+}
+
+function buscarUnidadDidactica($conexion){
+    $sql = "SELECT * FROM unidad_didactica";
+    return mysqli_query($conexion, $sql);
+}
 ?>
