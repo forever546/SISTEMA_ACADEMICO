@@ -58,4 +58,5 @@ function buscarUnidadDidactica($conexion){
     $sql = "SELECT * FROM unidad_didactica";
     return mysqli_query($conexion, $sql);
 }
+
 ?>

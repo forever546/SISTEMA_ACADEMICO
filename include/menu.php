@@ -40,7 +40,7 @@
                       <li><a href="modulo_formativo1.php">Modulos formativos</a></li>
                       <li><a href="semestre1.php">Semestre</a></li>
                       <li><a href="unidad_didactica1.php">Unidades didacticas</a></li>
-                      <li><a href="cargo.php">Cargo</a></li>
+                      <li><a href="cargo1.php">Cargo</a></li>
                       <li><a href="genero.php">Género</a></li>
                     </ul>
                   </li>
