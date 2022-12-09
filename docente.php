@@ -40,7 +40,7 @@ include "include/verificar_sesion.php";
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Registro de Estudiante</h2>
+                    <h2>Registro de Docente</h2>
                     
                     <div class="clearfix"></div>
                   </div>
@@ -59,7 +59,7 @@ include "include/verificar_sesion.php";
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Apellidos y Nombres :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="nom_ap" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="ape_nom" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="form-group">
@@ -80,14 +80,14 @@ include "include/verificar_sesion.php";
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Correo :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="email" name="email" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="email" name="correo" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">NRO Celular :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="number" name="cel" maxlength="9" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="number" name="telefono" maxlength="9" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="form-group">
@@ -106,7 +106,6 @@ include "include/verificar_sesion.php";
                         </select>
                         </div>
                       </div>
-                    
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nivel de Educación :
                         </label>
@@ -115,21 +114,35 @@ include "include/verificar_sesion.php";
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Condición laboral :
-                        </label>
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Condición Laboral :</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="cond_laboral" maxlength="9" required="required" class="form-control col-md-7 col-xs-12">
+                        <select name="id_cargo" id="id_cargo" class="form-control col-md-7 col-xs-12">
+                          <option value="">Seleccione</option>
+                          <?php
+                          $buscar_condicion = buscarCondicion($conexion);
+                          while ($res_b_condicion = mysqli_fetch_array($buscar_condicion)) {
+                          ?>
+                          <option value="<?php echo $res_b_condicion['id']; ?>"><?php echo $res_b_condicion['descripcion']; ?></option>
+                          <?php
+                          };
+                          ?>
+                        </select>
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name"> cargo :
-                        </label>
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Cargo :</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select name="discapacidad" id="discapacidad" class="form-control col-md-7 col-xs-12">
-                            <option value="">Seleccione</option>
-                            <option value="SI">SI</option>
-                            <option value="NO">NO</option>
-                          </select>
+                        <select name="id_cargo" id="id_cargo" class="form-control col-md-7 col-xs-12">
+                          <option value="">Seleccione</option>
+                          <?php
+                          $buscar_cargo = buscarCargo($conexion);
+                          while ($res_b_cargo = mysqli_fetch_array($buscar_cargo)) {
+                          ?>
+                          <option value="<?php echo $res_b_cargo['id']; ?>"><?php echo $res_b_cargo['descripcion']; ?></option>
+                          <?php
+                          };
+                          ?>
+                        </select>
                         </div>
                       </div>
                       <div class="ln_solid"></div>
