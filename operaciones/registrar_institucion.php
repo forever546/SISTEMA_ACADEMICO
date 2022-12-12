@@ -11,7 +11,7 @@ $telefono = $_POST['telefono'];
 $correo = $_POST['correo'];
 $nro_resolu = $_POST['nro_resolucion'];
 
-$consulta = "INSERT INTO datos_institucionales (codig, ruc, nombre_institucion, departamento, provincia, distrito, direccion, telefono, correo, nro_resolucion) VALUES ('$co_modu', '$ruc', '$nombre', '$departamento', '$provincia','$distrito', '$direccion', '$telefono', '$correo', '$nro_resolu')";
+$consulta = "INSERT INTO datos_institucionales (codigo, ruc, nombre_institucion, departamento, provincia, distrito, direccion, telefono, correo, nro_resolucion) VALUES ('$cod_modu', '$ruc', '$nombre', '$departamento', '$provincia','$distrito', '$direccion', '$telefono', '$correo', '$nro_resolu')";
 $ejec_consulta = mysqli_query($conexion, $consulta);
 if($ejec_consulta){
 		echo "<script>

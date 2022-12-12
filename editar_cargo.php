@@ -2,6 +2,10 @@
 include "include/conexion.php";
 include "include/busquedas.php";
 include "include/verificar_sesion.php";
+
+$id_cargo = $_GET['id'];
+$busc_cargo = buscarCargoById($conexion, $id_cargo);
+$res_b_cargo = mysqli_fetch_array($busc_cargo);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,7 +56,7 @@ include "include/verificar_sesion.php";
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Cargo :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="descripcion" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="descripcion" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_cargo['descripcion']; ?>">
                         </div>
                       </div>
                       <div class="ln_solid"></div>

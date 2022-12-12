@@ -1,6 +1,5 @@
 <?php
 include "../include/conexion.php";
-include "../include/busquedas.php";
 $descri = $_POST['descripcion'];
 
 $consulta = "INSERT INTO cargo (descripcion) VALUES ('$descri')";
