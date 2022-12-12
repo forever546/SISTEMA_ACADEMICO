@@ -2,6 +2,11 @@
 include "include/conexion.php";
 include "include/busquedas.php";
 include "include/verificar_sesion.php";
+
+$id_programa_estudios = $_GET['id'];
+$busc_programa_estudios = buscarProgramaEstudios($conexion, $id_programa_estudios);
+$res_b_programa_estudios = mysqli_fetch_array($busc_programa_estudios);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +45,7 @@ include "include/verificar_sesion.php";
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Programa de Estudios</h2>
+                    <h2>Editar Programa de Estudios</h2>
                     
                     <div class="clearfix"></div>
                   </div>
@@ -52,28 +57,28 @@ include "include/verificar_sesion.php";
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">CODIGO :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="number" name="codigo" maxlength="8" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="number" name="codigo" maxlength="8" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_programa_estudios['codigo']; ?>">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">TIPO :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="tipo" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="tipo" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_programa_estudios['tipo']; ?>">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">NOMBRE :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="nombre" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="nombre" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_programa_estudios['nombre']; ?>">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">RESOLUCIÓN :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="resolucion" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="resolucion" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_programa_estudios['resolucion']; ?>">
                         </div>
                       </div>
                       <div class="ln_solid"></div>

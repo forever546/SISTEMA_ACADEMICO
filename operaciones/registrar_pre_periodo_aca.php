@@ -1,6 +1,5 @@
 <?php
 include "../include/conexion.php";
-include "../include/busquedas.php";
 $fecha = $_POST['id_periodo_acad'];
 
 $consulta = "INSERT INTO presente_periodo_acad (id_periodo_acad) VALUES ('$fecha')";

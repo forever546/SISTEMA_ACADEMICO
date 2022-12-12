@@ -1,6 +1,5 @@
 <?php
 include "../include/conexion.php";
-include "../include/busquedas.php";
 $nombr = $_POST['nombre'];
 $fecha_in = $_POST['fecha_inicio'];
 $fecha_fi = $_POST['fecha_fin'];

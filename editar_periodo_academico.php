@@ -2,6 +2,10 @@
 include "include/conexion.php";
 include "include/busquedas.php";
 include "include/verificar_sesion.php";
+
+$id_periodo_academico = $_GET['id'];
+$busc_periodo_academico = buscarPeriodoAcademicoById($conexion, $id_periodo_academico);
+$res_b_periodo_academico = mysqli_fetch_array($busc_periodo_academico);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,35 +56,35 @@ include "include/verificar_sesion.php";
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">NOMBRE :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="nombre" maxlength="8" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="nombre" maxlength="8" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_periodo_academico['nombre']; ?>">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">FECHA DE INICIO :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="date" name="fecha_inicio" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="date" name="fecha_inicio" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_periodo_academico['fecha_inicio']; ?>">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">FECHA DE CULMINACION :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="date" name="fecha_fin" class="date-picker form-control col-md-7 col-xs-12" required="required" >
+                          <input type="date" name="fecha_fin" class="date-picker form-control col-md-7 col-xs-12" required="required" value="<?php echo $res_b_periodo_academico['fecha_fin']; ?>">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">DIRECTOR :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="director" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="director" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_periodo_academico['director']; ?>">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">FECHA DE ACTAS :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="date" name="fecha_actas" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="date" name="fecha_actas" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_periodo_academico['fecha_actas']; ?>">
                         </div>
                       </div>
                       <div class="ln_solid"></div>

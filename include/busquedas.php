@@ -47,14 +47,27 @@ function buscarProgramaEstudios($conexion){
     $sql = "SELECT * FROM programa_estudios";
     return mysqli_query($conexion, $sql);
 }
+function buscarProgramaEstudiosById($conexion, $id){
+    $sql = "SELECT * FROM programa_estudios WHERE id='$id'";
+    return mysqli_query($conexion, $sql);
+}
 
 function buscarPeriodoAcademico($conexion){
     $sql = "SELECT * FROM periodo_academico";
     return mysqli_query($conexion, $sql);
 }
+function buscarPeriodoAcademicoById($conexion, $id){
+    $sql = "SELECT * FROM periodo_academico WHERE id='$id'";
+    return mysqli_query($conexion, $sql);
+}
 
 function buscarModuloFormativo($conexion){
     $sql = "SELECT * FROM modulo_formativo";
+    return mysqli_query($conexion, $sql);
+}
+
+function buscarModuloFormativoById($conexion, $id){
+    $sql = "SELECT * FROM modulo_formativo WHERE id='$id'";
     return mysqli_query($conexion, $sql);
 }
 
