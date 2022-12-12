@@ -2,6 +2,10 @@
 include "include/conexion.php";
 include "include/busquedas.php";
 include "include/verificar_sesion.php";
+
+$id_unidad_didactica = $_GET['id'];
+$busc_unidad_didactica = buscarUnidadDidactica($conexion, $id_unidad_didactica);
+$res_b_unidad_didactica = mysqli_fetch_array($busc_unidad_didactica);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,14 +56,14 @@ include "include/verificar_sesion.php";
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Descripción :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="	descripcion" maxlength="8" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="	descripcion" maxlength="8" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_unidad_didactica['descripcion']; ?>">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Programa de Estudios :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                        <select name="id_programa_estudio" id="programa_estudio" class="form-control col-md-7 col-xs-12">
+                        <select name="id_programa_estudio" id="programa_estudio" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_unidad_didactica['id_programa_estudios']; ?>">
                           <option value="">Seleccione</option>
                           <?php
                           $buscar_pe = buscarProgramaEstudio($conexion);
@@ -76,14 +80,14 @@ include "include/verificar_sesion.php";
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nro de Módulo :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="number" name="id_modulo" maxlength="8" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="number" name="id_modulo" maxlength="8" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_unidad_didactica['id_modulo']; ?>">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Semestre:
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                        <select name="id_semestre" id="semestre" class="form-control col-md-7 col-xs-12">
+                        <select name="id_semestre" id="semestre" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_unidad_didactica['id_semestre']; ?>">
                           <option value="">Seleccione</option>
                           <?php
                           $buscar_sem = buscarSemestre($conexion);
@@ -100,28 +104,28 @@ include "include/verificar_sesion.php";
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Creditos :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="number" name="creditos" class="date-picker form-control col-md-7 col-xs-12" required="required" >
+                          <input type="number" name="creditos" class="date-picker form-control col-md-7 col-xs-12" required="required" value="<?php echo $res_b_unidad_didactica['creditos']; ?>">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Horas :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="time" name="horas" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="time" name="horas" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_unidad_didactica['horas']; ?>">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Tipo :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="tipo" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="tipo" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_unidad_didactica['tipo']; ?>">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Orden :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="number" name="orden" maxlength="9" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="number" name="orden" maxlength="9" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_unidad_didactica['orden']; ?>">
                         </div>
                       </div>
                       <div class="ln_solid"></div>

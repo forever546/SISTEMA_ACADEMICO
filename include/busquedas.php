@@ -15,6 +15,11 @@ function buscarSemestre($conexion){
     $sql = "SELECT * FROM semestre";
     return mysqli_query($conexion, $sql);
 }
+function buscarSemestreById($conexion, $id){
+    $sql = "SELECT * FROM semestre WHERE id='$id'";
+    return mysqli_query($conexion, $sql);
+}
+
 function buscarCondicion($conexion){
     $sql = "SELECT * FROM condicion";
     return mysqli_query($conexion, $sql);
@@ -73,6 +78,10 @@ function buscarModuloFormativoById($conexion, $id){
 
 function buscarUnidadDidactica($conexion){
     $sql = "SELECT * FROM unidad_didactica";
+    return mysqli_query($conexion, $sql);
+}
+function buscarUnidadDidacticaById($conexion, $id){
+    $sql = "SELECT * FROM unidad_didactica WHERE id='$id'";
     return mysqli_query($conexion, $sql);
 }
 

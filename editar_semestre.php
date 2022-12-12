@@ -2,6 +2,10 @@
 include "include/conexion.php";
 include "include/busquedas.php";
 include "include/verificar_sesion.php";
+
+$id_semestre = $_GET['id'];
+$busc_semestre = buscarSemestre($conexion, $id_semestre);
+$res_b_semestre = mysqli_fetch_array($busc_semestre);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,7 +56,7 @@ include "include/verificar_sesion.php";
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Semestre :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="descripcion" class="date-picker form-control col-md-7 col-xs-12" required="required" >
+                          <input type="text" name="descripcion" class="date-picker form-control col-md-7 col-xs-12" value="<?php echo $res_b_semestre['descripcion']; ?>">
                         </div>
                       </div>
                       <div class="ln_solid"></div>

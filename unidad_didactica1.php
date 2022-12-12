@@ -82,7 +82,7 @@ include "include/verificar_sesion.php";
                           <td><?php echo $res_b_unidad_didactica['tipo']; ?></td>
                           <td><?php echo $res_b_unidad_didactica['orden']; ?></td>
                           <td>
-                            <a href="editar_periodo_academico.php?id=<?php echo $res_b_unidad_didactica['id']; ?>" class="btn btn-primary">Editar</a>
+                            <a href="editar_unidad_didactica.php?id=<?php echo $res_b_unidad_didactica['id']; ?>" class="btn btn-primary">Editar</a>
                           </td>
                         </tr>
                         <?php
