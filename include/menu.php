@@ -1,7 +1,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+              <a href="index.html" class="site_title"><i class="fa fa-info-circle yellow"></i> <span>IESTPHUANTA</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -12,10 +12,10 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="Gentella/production/images/img.jpg" alt="..." class="img-circle profile_img">
+                <img src="./img/foto.JPG" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
-                <span>Welcome,</span>
+                <span>USUARIO,</span>
                 <h2><?php echo $res_b_u_s['apellidos_nombres']; ?></h2>
               </div>
             </div>
