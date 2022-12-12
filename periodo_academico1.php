@@ -77,6 +77,7 @@ include "include/verificar_sesion.php";
                           <td><?php echo $res_b_periodo_academico['fecha_actas']; ?></td>
                           <td>
                             <a href="editar_periodo_academico.php?id=<?php echo $res_b_periodo_academico['id']; ?>" class="btn btn-primary">Editar</a>
+                            <a href="operaciones/eliminar_periodo_academico.php?id=<?php echo $res_b_periodo_academico['id']; ?>" class="btn btn-danger">Eliminar</a>
                           </td>
                         </tr>
                         <?php

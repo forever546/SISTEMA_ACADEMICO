@@ -55,7 +55,7 @@
                 <br />
 
                 <div>
-                  <h1><i class=""></i> IESTPHUANTA</h1>
+                  <h1><i class="fa fa-info-circle yellow"></i> IESTPHUANTA</h1>
                   <p>©2022 </p>
                 </div>
               </div>

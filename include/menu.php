@@ -1,7 +1,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-info-circle yellow"></i> <span>IESTPHUANTA</span></a>
+              <a class="site_title"><i class="fa fa-info-circle yellow"></i> <span>IESTPHUANTA</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -49,7 +49,7 @@
                       <li><a href="prog_ud.php">Programación de Unidades Didacticas</a></li>
                       <li><a href="matricula.php"> Matrícula</a></li>
                       <li><a href="calificacion.php"> Calificaciones</a></li>
-                      <li><a href="condicion.php"> Condición</a></li>
+                      <li><a href="condicion1.php"> Condición</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-desktop"></i> Docentes <span class="fa fa-chevron-down"></span></a>
@@ -98,19 +98,19 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="Gentella/production/images/img.jpg" alt=""><?php echo $res_b_u_s['apellidos_nombres']; ?>
+                    <img src="./img/foto.JPG" alt=""><?php echo $res_b_u_s['apellidos_nombres']; ?>
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="javascript:;"> Profile</a></li>
+                    <li><a href="javascript:;"> Perfil</a></li>
                     <li>
                       <a href="javascript:;">
                         <span class="badge bg-red pull-right">50%</span>
-                        <span>Settings</span>
+                        <span>Ajustes</span>
                       </a>
                     </li>
-                    <li><a href="javascript:;">Help</a></li>
-                    <li><a href="operaciones/cerrar_sesion.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                    <li><a href="javascript:;">ayuda</a></li>
+                    <li><a href="operaciones/cerrar_sesion.php"><i class="fa fa-sign-out pull-right"></i> Cerrar Sesion</a></li>
                   </ul>
                 </li>
 

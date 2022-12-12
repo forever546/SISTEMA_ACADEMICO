@@ -41,10 +41,10 @@ include "include/verificar_sesion.php";
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>unidad didactica</h2>
+                    <h2>Condición Laboral</h2>
                     <ul class="nav navbar-right">
                       <li>
-                        <a href="unidad_didactica.php" class="btn btn-success">Agregar Nuevo</a>
+                        <a href="condicion.php" class="btn btn-success">Agregar Nuevo</a>
                       </li>
                     </ul>
                     <div class="clearfix"></div>
@@ -55,35 +55,23 @@ include "include/verificar_sesion.php";
                       <thead>
                         <tr>
                           <th>Id</th>
-                          <th>unidad didactica</th>
-                          <th>programa de estudios</th>
-                          <th>modulo</th>
-                          <th>semestre</th>
-                          <th>creditos</th>
-                          <th>horas</th>
-                          <th>tipo</th>
-                          <th>orden</th>
+                          <th>Condición Laboral</th>
+                          <th>Codigo</th>
                           <th>Acciones</th>
                         </tr>
                       </thead>
                       <tbody>
                         <?php 
-                        $b_unidad_didactica = buscarUnidadDidactica($conexion);
-                        while ($res_b_unidad_didactica = mysqli_fetch_array($b_unidad_didactica)) {
+                        $b_condicion= buscarCondicion($conexion);
+                        while ($res_b_condicion = mysqli_fetch_array($b_condicion)) {
                         ?>
                         <tr>
-                          <td><?php echo $res_b_unidad_didactica['id']; ?></td>
-                          <td><?php echo $res_b_unidad_didactica['descripcion']; ?></td>
-                          <td><?php echo $res_b_unidad_didactica['id_programa_estudio']; ?></td>
-                          <td><?php echo $res_b_unidad_didactica['id_modulo']; ?></td>
-                          <td><?php echo $res_b_unidad_didactica['id_semestre']; ?></td>
-                          <td><?php echo $res_b_unidad_didactica['creditos']; ?></td>
-                          <td><?php echo $res_b_unidad_didactica['horas']; ?></td>
-                          <td><?php echo $res_b_unidad_didactica['tipo']; ?></td>
-                          <td><?php echo $res_b_unidad_didactica['orden']; ?></td>
+                          <td><?php echo $res_b_condicion['id']; ?></td>
+                          <td><?php echo $res_b_condicion['descripcion']; ?></td>
+                          <td><?php echo $res_b_condicion['codigo']; ?></td>
                           <td>
-                            <a href="editar_unidad_didactica.php?id=<?php echo $res_b_unidad_didactica['id']; ?>" class="btn btn-primary">Editar</a>
-                            <a href="operaciones/eliminar_unidad_didactica.php?id=<?php echo $res_b_unidad_didactica['id']; ?>" class="btn btn-danger">Eliminar</a>
+                            <a href="editar_condicion.php?id=<?php echo $res_b_condicion['id']; ?>" class="btn btn-primary">Editar</a>
+                            <a href="operaciones/eliminar_condicion.php?id=<?php echo $res_b_condicion['id']; ?>" class="btn btn-danger">Eliminar</a>
                           </td>
                         </tr>
                         <?php
