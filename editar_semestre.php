@@ -62,7 +62,7 @@ $res_b_semestre = mysqli_fetch_array($busc_semestre);
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button href="./semestre.php" class="btn btn-primary" type="button">Cancelar</button>
+                        <a href= semestre1.php class="btn btn-primary"> Cancelar </a>
                           <button type="submit" class="btn btn-success">Guardar</button>
                         </div>
                       </div>

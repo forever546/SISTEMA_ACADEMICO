@@ -131,8 +131,8 @@ $res_b_unidad_didactica = mysqli_fetch_array($busc_unidad_didactica);
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button href="./unidad_didactica.php" class="btn btn-primary" type="button">Cancelar</button>
-						  <button class="btn btn-primary" type="reset">Limpiar</button>
+                        <a href= unidad_didactica1.php class="btn btn-primary"> Cancelar </a>
+						              <button class="btn btn-primary" type="reset">Limpiar</button>
                           <button type="submit" class="btn btn-success">Guardar</button>
                         </div>
                       </div>

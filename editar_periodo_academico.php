@@ -90,8 +90,8 @@ $res_b_periodo_academico = mysqli_fetch_array($busc_periodo_academico);
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button href="./periodo_academico.php" class="btn btn-primary" type="button">Cancelar</button>
-						  <button class="btn btn-primary" type="reset">Limpiar</button>
+                          <a href= periodo_academico1.php class="btn btn-success"> Cancelar </a>
+						              <button class="btn btn-primary" type="reset">Limpiar</button>
                           <button type="submit" class="btn btn-success">Guardar</button>
                         </div>
                       </div>

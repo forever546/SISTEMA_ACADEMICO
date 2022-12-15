@@ -10,7 +10,7 @@ $ejec_consulta = mysqli_query($conexion, $consulta);
 if($ejec_consulta){
 		echo "<script>
                 alert('Registro Exitoso');
-                window.location= '../modulo_formativo.php'
+                window.location= '../modulo_formativo1.php'
     			</script>";
 	}else{
 		echo "<script>

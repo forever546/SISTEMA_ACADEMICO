@@ -86,7 +86,7 @@ $res_b_modulo_formativo = mysqli_fetch_array($busc_modulo_formativo);
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button href="./modulo_formativo.php" class="btn btn-primary" type="button">Cancelar</button>
+                          <a href= modulo_formativo1.php class="btn btn-success"> Cancelar </a>
                           <button class="btn btn-primary" type="reset">Limpiar</button>
                           <button type="submit" class="btn btn-success">Guardar</button>
                         </div>

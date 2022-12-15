@@ -12,7 +12,7 @@ include "include/busquedas.php";
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Gentelella Alela! | </title>
+    <title>SISTEMA ACADEMICO IESTPHUANTA</title>
     <!-- Bootstrap -->
     <link href="Gentella/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -39,7 +39,8 @@ include "include/busquedas.php";
         <div class="right_col" role="main">
           <div class="row">
             <div class="col-md-8 col-sm-8 col-xs-12">
-              <?php echo $_SESSION['id_usu_sisacad_iesthuanta']; ?>
+             <!-- <?php echo $_SESSION['id_usu_sisacad_iesthuanta']; ?> -->
+             <h1>INSTITUTO DE EDUCACIÓN SUPERIOR TECNOLÓGICO PÚBLICO "HUANTA"</h1>
             </div>
           </div>
         </div>
