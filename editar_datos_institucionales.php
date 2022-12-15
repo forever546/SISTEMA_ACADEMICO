@@ -2,6 +2,12 @@
 include "include/conexion.php";
 include "include/busquedas.php";
 include "include/verificar_sesion.php";
+
+$ruc_datos_institucionales = $_GET['id'];
+$busc_datos_institucionales = buscarDatosInstitucionalesByRuc($conexion, $ruc_datos_institucionales);
+$res_b_datos_institucionales = mysqli_fetch_array($busc_datos_institucionales);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,48 +46,89 @@ include "include/verificar_sesion.php";
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Programa de Estudios</h2>
+                    <h2>Registro de Institución</h2>
                     
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
                     <br />
-                    <form class="form-horizontal form-label-left" method="POST" action="operaciones/registrar_programa_estudios.php">
-
+                    <form class="form-horizontal form-label-left" method="POST" action="operaciones/actualizar_datos_institucionales.php">
+                    <input type="hidden" name="ruc" value="<?php echo $ruc_datos_institucionales;?>">
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">CODIGO :
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">CODIGO MODULAR :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="codigo" maxlength="8" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="cod_modular" maxlength="8" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_datos_institucionales['cod_modular']; ?>">
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">TIPO :
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">RUC :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="tipo" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="number" name="ruc" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_datos_institucionales['ruc']; ?>">
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">NOMBRE :
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">NOMBRE DE INSTITUCION :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="nombre" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="nombre_institucion" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_datos_institucionales['nombre_institucion']; ?>">
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">RESOLUCIÓN :
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">DEPARTAMENTO :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="resolucion" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="departamento" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_datos_institucionales['departamento']; ?>">
                         </div>
                       </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">PROVINCIA :
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" name="provincia" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_datos_institucionales['provincia']; ?>">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">DISTRITO :
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" name="distrito" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_datos_institucionales['distrito']; ?>">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">DIRECCIÓN :
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" name="direccion" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_datos_institucionales['direccion']; ?>">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">TELEFONO :
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="number" name="telefono" maxlength="9" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_datos_institucionales['telefono']; ?>">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Correo :
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="email" name="correo" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_datos_institucionales['correo']; ?>">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">RESOLUCIÓN :
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" name="nro_resolucion" maxlength="9" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_datos_institucionales['nro_resolucion']; ?>">
+                        </div>
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <a href= programa_estudios1.php class="btn btn-primary"> Cancelar </a>
-						              <button class="btn btn-primary" type="reset">Limpiar</button>
-                          <button type="submit" class="btn btn-success">Guardar</button>
+                        <a href= datos_institucionales.php class="btn btn-primary"> Cancelar </a>
+						            <button class="btn btn-primary" type="reset">Limpiar</button>
+                        <button type="submit" class="btn btn-success">Guardar</button>
                         </div>
                       </div>
 

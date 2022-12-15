@@ -4,7 +4,7 @@ include "include/busquedas.php";
 include "include/verificar_sesion.php";
 
 $id_semestre = $_GET['id'];
-$busc_semestre = buscarSemestre($conexion, $id_semestre);
+$busc_semestre = buscarSemestreById($conexion, $id_semestre);
 $res_b_semestre = mysqli_fetch_array($busc_semestre);
 ?>
 <!DOCTYPE html>

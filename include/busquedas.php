@@ -127,4 +127,12 @@ function buscarPresentePeriodoAcademicoById($conexion, $id){
     return mysqli_query($conexion, $sql);
 }
 
+function buscarDatosInstitucionales($conexion){
+    $sql = "SELECT * FROM datos_institucionales";
+    return mysqli_query($conexion, $sql);
+}
+function buscarDatosInstitucionalesByRuc($conexion, $ruc){
+    $sql = "SELECT * FROM datos_institucionales WHERE ruc='$ruc'";
+    return mysqli_query($conexion, $sql);
+}
 ?>

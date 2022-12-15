@@ -57,7 +57,7 @@ $res_b_programa_estudios = mysqli_fetch_array($busc_programa_estudios);
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">CODIGO :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="number" name="codigo" maxlength="8" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_programa_estudios['codigo']; ?>">
+                          <input type="text" name="codigo" maxlength="8" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_programa_estudios['codigo']; ?>">
                         </div>
                       </div>
                       <div class="form-group">

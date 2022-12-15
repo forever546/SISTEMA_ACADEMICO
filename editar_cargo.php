@@ -51,7 +51,7 @@ $res_b_cargo = mysqli_fetch_array($busc_cargo);
                   <div class="x_content">
                     <br />
                     <form class="form-horizontal form-label-left" method="POST" action="operaciones/actualizar_cargo.php">
-
+                    <input type="hidden" name="id" value="<?php echo $id_cargo; ?>">
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Cargo :
                         </label>
