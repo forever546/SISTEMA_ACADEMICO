@@ -50,8 +50,8 @@ $res_b_periodo_academico = mysqli_fetch_array($busc_periodo_academico);
                   </div>
                   <div class="x_content">
                     <br />
-                    <form class="form-horizontal form-label-left" method="POST" action="operaciones/periodo_academico.php">
-
+                    <form class="form-horizontal form-label-left" method="POST" action="operaciones/actualizar_periodo_academico.php">
+                    <input type="hidden" name="id" value="<?php echo $id_periodo_academico; ?>">
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">NOMBRE :
                         </label>
@@ -90,7 +90,7 @@ $res_b_periodo_academico = mysqli_fetch_array($busc_periodo_academico);
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <a href= periodo_academico1.php class="btn btn-success"> Cancelar </a>
+                          <a href= periodo_academico1.php class="btn btn-primary"> Cancelar </a>
 						              <button class="btn btn-primary" type="reset">Limpiar</button>
                           <button type="submit" class="btn btn-success">Guardar</button>
                         </div>

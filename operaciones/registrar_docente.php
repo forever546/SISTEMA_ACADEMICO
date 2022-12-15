@@ -2,7 +2,7 @@
 include "../include/conexion.php";
 include "../include/busquedas.php";
 $dni = $_POST['dni'];
-$ape_nom = $_POST['ape_nom'];
+$ape_nom = $_POST['apellidos_nombres'];
 $fecha_nac = $_POST['fecha_nac'];
 $direccion = $_POST['direccion'];
 $email = $_POST['correo'];

@@ -1,18 +1,16 @@
 <?php
 include "../include/conexion.php";
 include "../include/busquedas.php";
-
 $id = $_POST['id'];
-$descripcion = $_POST['descripcion'];
+$genero = $_POST['genero'];
 
-$sql = "UPDATE semestre SET descripcion='$descripcion' WHERE id='$id'";
-
+$sql = "UPDATE genero SET genero='$genero' WHERE id='$id'";
 $ejec_consulta = mysqli_query($conexion, $sql);
 
 if ($ejec_consulta) {
     echo "<script>
 					alert('Datos actualizados de manera Correcta');
-					window.location= '../semestre1.php';
+					window.location= '../genero1.php';
 				</script>
 			";
 }else{

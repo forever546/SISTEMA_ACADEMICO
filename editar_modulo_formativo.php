@@ -3,9 +3,10 @@ include "include/conexion.php";
 include "include/busquedas.php";
 include "include/verificar_sesion.php";
 
-$id_modulo_formativo = $_GET['id'];
-$busc_modulo_formativo = buscarModuloFormativoById($conexion, $id_modulo_formativo);
-$res_b_modulo_formativo = mysqli_fetch_array($busc_modulo_formativo);
+$id_modulo = $_GET['id'];
+$busc_modulo = buscarModuloFormativoById($conexion, $id_modulo);
+$res_b_modulo_formativo = mysqli_fetch_array($busc_modulo);
+$id_prog_Estudios = $res_b_modulo_formativo['id_programa_estudio'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,13 +51,13 @@ $res_b_modulo_formativo = mysqli_fetch_array($busc_modulo_formativo);
                   </div>
                   <div class="x_content">
                     <br />
-                    <form class="form-horizontal form-label-left" method="POST" action="operaciones/registrar_modu_formativo.php">
-
+                    <form class="form-horizontal form-label-left" method="POST" action="operaciones/actualizar_modulo_formativo.php">
+                    <input type="hidden" name="id" value="<?php echo $id_modulo; ?>">
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Descripción :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="descripcion" maxlength="8" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_modulo_formativo['descripcion']; ?>">
+                          <input type="text" name="descripcion" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_modulo_formativo['descripcion']; ?>">
                         </div>
                       </div>
                       <div class="form-group">
@@ -70,13 +71,21 @@ $res_b_modulo_formativo = mysqli_fetch_array($busc_modulo_formativo);
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Programa de Estudios :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                        <select name="id_programa_estudio" id="programa_estudio" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_modulo_formativo['id_programa_estudio']; ?>">
+                        <select name="id_programa_estudio" id="id_programa_estudio" class="form-control col-md-7 col-xs-12" value="<?php echo $id_prog_Estudios; ?>">
                           <option value="">Seleccione</option>
                           <?php
-                          $buscar_pe = buscarProgramaEstudio($conexion);
-                          while ($res_b_pe = mysqli_fetch_array($buscar_pe)) {
+                          $buscar_programa = buscarProgramaEstudio($conexion);
+                          while ($res_b_mod= mysqli_fetch_array($buscar_programa)) {
+                            $id_p_estudios = $res_b_mod['id'];
                           ?>
-                          <option value="<?php echo $res_b_pe['id']; ?>"><?php echo $res_b_pe['nombre']; ?></option>
+                          <option value="<?php echo $id_p_estudios; ?>" 
+						  
+                          <?php 
+						  	// hacemos una comparacion si nuestro id del programa de estudios coincide con el que traemos
+						  if($id_prog_Estudios === $id_p_estudios){
+                            echo "selected";
+                          } ?>
+                          ><?php echo $res_b_mod['nombre']; ?></option>
                           <?php
                           };
                           ?>
@@ -86,7 +95,7 @@ $res_b_modulo_formativo = mysqli_fetch_array($busc_modulo_formativo);
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <a href= modulo_formativo1.php class="btn btn-success"> Cancelar </a>
+                          <a href= modulo_formativo1.php class="btn btn-primary"> Cancelar </a>
                           <button class="btn btn-primary" type="reset">Limpiar</button>
                           <button type="submit" class="btn btn-success">Guardar</button>
                         </div>

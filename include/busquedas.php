@@ -3,6 +3,10 @@ function buscarGenero($conexion){
     $sql = "SELECT * FROM genero";
     return mysqli_query($conexion, $sql);
 }
+function buscarGeneroById($conexion, $id){
+    $sql = "SELECT * FROM genero WHERE id='$id'";
+    return mysqli_query($conexion, $sql);
+}
 function buscarCargo($conexion){
     $sql = "SELECT * FROM cargo";
     return mysqli_query($conexion, $sql);
@@ -49,7 +53,7 @@ function buscarEstudiantes($conexion){
     return mysqli_query($conexion, $sql);
 }
 function buscarDocenteByDni($conexion, $dni){
-    $sql = "SELECT * FROM estudiante WHERE dni='$dni'";
+    $sql = "SELECT * FROM docente WHERE dni='$dni'";
     return mysqli_query($conexion, $sql);
 }
 function buscarDocenteById($conexion, $id){
@@ -71,6 +75,10 @@ function buscarProgramaEstudiosById($conexion, $id){
 
 function buscarUsuarioEstudiante($conexion){
     $sql = "SELECT * FROM usuarios_estudiante";
+    return mysqli_query($conexion, $sql);
+}
+function buscarUsuarioEstudianteById($conexion, $id){
+    $sql = "SELECT * FROM usuarios_estudiante WHERE id='$id'";
     return mysqli_query($conexion, $sql);
 }
 
@@ -110,4 +118,13 @@ function buscarUsuarioDocentesById($conexion, $id){
     $sql = "SELECT * FROM usuarios_docentes WHERE id='$id'";
     return mysqli_query($conexion, $sql);
 }
+function buscarPresentePeriodoAcademico($conexion){
+    $sql = "SELECT * FROM presente_periodo_acad";
+    return mysqli_query($conexion, $sql);
+}
+function buscarPresentePeriodoAcademicoById($conexion, $id){
+    $sql = "SELECT * FROM presente_periodo_acad WHERE id='$id'";
+    return mysqli_query($conexion, $sql);
+}
+
 ?>

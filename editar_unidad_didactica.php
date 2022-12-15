@@ -50,7 +50,7 @@ $res_b_unidad_didactica = mysqli_fetch_array($busc_unidad_didactica);
                   </div>
                   <div class="x_content">
                     <br />
-                    <form class="form-horizontal form-label-left" method="POST" action="operaciones/unidad_didactica.php">
+                    <form class="form-horizontal form-label-left" method="POST" action="operaciones/actualizar_unidad_didactica.php">
 
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Descripción :

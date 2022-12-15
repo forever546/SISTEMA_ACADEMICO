@@ -41,10 +41,10 @@ include "include/verificar_sesion.php";
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>unidad didactica</h2>
+                    <h2>presente Periodo Academico</h2>
                     <ul class="nav navbar-right">
                       <li>
-                        <a href="unidad_didactica.php" class="btn btn-success">Agregar Nuevo</a>
+                        <a href="presente_per_acad.php" class="btn btn-success">Agregar Nuevo</a>
                       </li>
                     </ul>
                     <div class="clearfix"></div>
@@ -55,54 +55,24 @@ include "include/verificar_sesion.php";
                       <thead>
                         <tr>
                           <th>Id</th>
-                          <th>unidad didactica</th>
-                          <th>programa de estudios</th>
-                          <th>modulo</th>
-                          <th>semestre</th>
-                          <th>creditos</th>
-                          <th>horas</th>
-                          <th>tipo</th>
-                          <th>orden</th>
-                          <th>Acciones</th>
+                          <th>Fecha </th>
                         </tr>
                       </thead>
                       <tbody>
-										<?php
-										$b_ud = buscarUnidadDidactica($conexion);
-										while ($res_b_ud = mysqli_fetch_array($b_ud)) {
-										?>
-											<tr>
-												<td><?php echo $res_b_ud['id']; ?></td>
-												<td><?php echo $res_b_ud['descripcion']; ?></td>
-												<?php
-												$b_programa = buscarProgramaEstudiosById($conexion, $res_b_ud['id_programa_estudio']);
-												$res_b_p_id = mysqli_fetch_array($b_programa);
-
-												$b_modulo = buscarModuloFormativoById($conexion, $res_b_ud['id_modulo']);
-												$res_b_m_id = mysqli_fetch_array($b_modulo);
-											
-												$b_semestre = buscarSemestreById($conexion, $res_b_ud['id_semestre']);
-												$res_b_s_id = mysqli_fetch_array($b_semestre);
-
-												?>
-												<td><?php echo $res_b_p_id['nombre'];  ?></td>
-												<td><?php echo $res_b_m_id['descripcion']; ?></td>
-												<td><?php echo $res_b_s_id['descripcion']; ?></td>
-												<td><?php echo $res_b_ud['creditos']; ?></td>
-												<td><?php echo $res_b_ud['horas']; ?></td>
-												<td><?php echo $res_b_ud['tipo']; ?></td>
-												<td><?php echo $res_b_ud['orden']; ?></td>
-												<td>
-													<span class="justify-center">
-														<a href="editar_unidad_didactica.php?id=<?php echo $res_b_ud['id']; ?>" class="btn btn-primary"> Editar</a>
-														<a href="operaciones/eliminar_unidad_didactica.php?id=<?php echo $res_b_ud['id']; ?>" class="btn btn-danger">Eliminar</a>
-												</td>
-											</tr>
-										<?php
-										}
-                    ?>
-
-									</tbody>
+                        <?php 
+                        $b_presente_periodo_academico = buscarPresentePeriodoAcademico($conexion);
+                        while ($res_b_presente_periodo_academico = mysqli_fetch_array($b_presente_periodo_academico)) {
+                        ?>
+                        <tr>
+                          <td><?php echo $res_b_presente_periodo_academico['id']; ?></td>
+                          <td><?php echo $res_b_presente_periodo_academico['id_periodo_acad']; ?></td>
+                          <td>
+                        </tr>
+                        <?php
+                        }
+                        ?>
+                        
+                      </tbody>
                     </table>
                   </div>
                 </div>

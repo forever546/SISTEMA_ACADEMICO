@@ -4,16 +4,16 @@ include "../include/busquedas.php";
 
 $id = $_POST['id'];
 $descripcion = $_POST['descripcion'];
-$cod = $_POST['codigo'];
+//echo "id=".$id. "descripcion=".$descripcion;
 
-$sql = "UPDATE condicion SET descripcion='$descripcion', codigo='$cod' WHERE id='$id'";
+$sql = "UPDATE condicion SET descripcion='$descripcion' WHERE id='$id'";
 
 $ejec_consulta = mysqli_query($conexion, $sql);
 
 if ($ejec_consulta) {
     echo "<script>
 					alert('Datos actualizados de manera Correcta');
-					window.location= '../condicion.php';
+					window.location= '../condicion1.php';
 				</script>
 			";
 }else{

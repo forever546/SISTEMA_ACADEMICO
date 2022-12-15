@@ -3,16 +3,16 @@ include "../include/conexion.php";
 include "../include/busquedas.php";
 
 $id = $_POST['id'];
-$descripcion = $_POST['descripcion'];
+$dni = $_POST['dni'];
 
-$sql = "UPDATE semestre SET descripcion='$descripcion' WHERE id='$id'";
+$sql = "UPDATE usuarios_docentes SET dni='$dni' WHERE id='$id'";
 
 $ejec_consulta = mysqli_query($conexion, $sql);
 
 if ($ejec_consulta) {
     echo "<script>
 					alert('Datos actualizados de manera Correcta');
-					window.location= '../semestre1.php';
+					window.location= '../usuarios_docentes.php';
 				</script>
 			";
 }else{

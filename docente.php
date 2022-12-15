@@ -59,7 +59,7 @@ include "include/verificar_sesion.php";
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Apellidos y Nombres :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="ape_nom" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="apellidos_nombres" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="form-group">
@@ -116,7 +116,7 @@ include "include/verificar_sesion.php";
                       <div class="form-group">
                         <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Condición Laboral :</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                        <select name="id_cargo" id="id_cargo" class="form-control col-md-7 col-xs-12">
+                        <select name="cond_laboral" id="cond_laboral" class="form-control col-md-7 col-xs-12">
                           <option value="">Seleccione</option>
                           <?php
                           $buscar_condicion = buscarCondicion($conexion);

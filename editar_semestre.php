@@ -50,13 +50,13 @@ $res_b_semestre = mysqli_fetch_array($busc_semestre);
                   </div>
                   <div class="x_content">
                     <br />
-                    <form class="form-horizontal form-label-left" method="POST" action="operaciones/semestre.php">
-
+                    <form class="form-horizontal form-label-left" method="POST" action="operaciones/actualizar_semestre.php">
+                    <input type="hidden" name="id" value="<?php echo $id_semestre; ?>">
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Semestre :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="descripcion" class="date-picker form-control col-md-7 col-xs-12" value="<?php echo $res_b_semestre['descripcion']; ?>">
+                        <input type="text" name="descripcion" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_semestre['descripcion']; ?>">
                         </div>
                       </div>
                       <div class="ln_solid"></div>

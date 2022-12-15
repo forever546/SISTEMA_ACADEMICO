@@ -2,6 +2,8 @@
 include "../include/conexion.php";
 $fecha = $_POST['id_periodo_acad'];
 
+//echo "id_periodo_acad=".$fecha;
+
 $consulta = "INSERT INTO presente_periodo_acad (id_periodo_acad) VALUES ('$fecha')";
 $ejec_consulta = mysqli_query($conexion, $consulta);
 if($ejec_consulta){

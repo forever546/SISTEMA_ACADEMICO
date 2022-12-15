@@ -56,7 +56,6 @@ include "include/verificar_sesion.php";
                         <tr>
                           <th>Id</th>
                           <th>Condición Laboral</th>
-                          <th>Codigo</th>
                           <th>Acciones</th>
                         </tr>
                       </thead>

@@ -7,7 +7,7 @@ $ejec_consulta = mysqli_query($conexion, $consulta);
 if($ejec_consulta){
 		echo "<script>
                 alert('Registro Exitoso');
-                window.location= '../genero.php'
+                window.location= '../genero1.php'
     			</script>";
 	}else{
 		echo "<script>

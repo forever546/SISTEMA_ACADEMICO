@@ -45,14 +45,14 @@ $res_b_docente = mysqli_fetch_array($busc_docente);
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Registro de Estudiante</h2>
+                    <h2>editar docente</h2>
                     
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
                     <br />
-                    <form class="form-horizontal form-label-left" method="POST" action="operaciones/registrar_docente.php">
-
+                    <form class="form-horizontal form-label-left" method="POST" action="operaciones/actualizar_docente.php">
+                    <input type="hidden" name="id" value="<?php echo $id_docente; ?>">
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">DNI :
                         </label>
@@ -64,7 +64,7 @@ $res_b_docente = mysqli_fetch_array($busc_docente);
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Apellidos y Nombres :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="nom_ap" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_docente['apellidos_nombres']; ?>">
+                          <input type="text" name="apellidos_nombres" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_docente['apellidos_nombres']; ?>">
                         </div>
                       </div>
                       <div class="form-group">
@@ -85,14 +85,14 @@ $res_b_docente = mysqli_fetch_array($busc_docente);
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Correo :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="email" name="email" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_docente['correo']; ?>">
+                          <input type="email" name="correo" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_docente['correo']; ?>">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">NRO Celular :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="number" name="cel" maxlength="9" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_docente['telefono']; ?>">
+                          <input type="number" name="telefono" maxlength="9" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_docente['telefono']; ?>">
                         </div>
                       </div>
                       <div class="form-group">
@@ -129,20 +129,20 @@ $res_b_docente = mysqli_fetch_array($busc_docente);
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Condición laboral :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="nivel_educacion" maxlength="9" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_docente['cond_laboral']; ?>">
+                          <input type="text" name="cond_laboral" maxlength="9" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_docente['cond_laboral']; ?>">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Cargo :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="descripcion" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_docente['id_cargo']; ?>">
+                          <input type="text" name="id_cargo" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_docente['id_cargo']; ?>">
                         </div>
                       </div>
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <a href= docentes.php class="btn btn-success"> Cancelar </a>
+                          <a href= docentes.php class="btn btn-primary"> Cancelar </a>
 						              <button class="btn btn-primary" type="reset">Limpiar</button>
                           <button type="submit" class="btn btn-success">Guardar</button>
                         </div>

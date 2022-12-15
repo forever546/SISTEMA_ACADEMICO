@@ -51,6 +51,7 @@ $res_b_condicion = mysqli_fetch_array($busc_condicion);
                   <div class="x_content">
                     <br />
                     <form class="form-horizontal form-label-left" method="POST" action="operaciones/actualizar_condicion.php">
+                    <input type="hidden" name="id" value="<?php echo $id_condicion; ?>">
                     <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Condición Laboral :
                         </label>
@@ -58,18 +59,10 @@ $res_b_condicion = mysqli_fetch_array($busc_condicion);
                           <input type="text" name="descripcion" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_condicion['descripcion']; ?>">
                         </div>
                       </div>
-
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Codigo:
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="number" name="codigp" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $res_b_condicion['codigo']; ?>">
-                        </div>
-                      </div>
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                        <a href= condicion1.php class="btn btn-success"> Cancelar </a>
+                        <a href= condicion1.php class="btn btn-primary"> Cancelar </a>
 						              <button class="btn btn-primary" type="reset">Limpiar</button>
                           <button type="submit" class="btn btn-success">Guardar</button>
                         </div>

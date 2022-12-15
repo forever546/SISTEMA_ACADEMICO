@@ -52,7 +52,7 @@ $res_b_programa_estudios = mysqli_fetch_array($busc_programa_estudios);
                   <div class="x_content">
                     <br />
                     <form class="form-horizontal form-label-left" method="POST" action="operaciones/actualizar_progr_estudios.php">
-
+                    <input type="hidden" name="id" value="<?php echo $id_programa_estudios; ?>">
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">CODIGO :
                         </label>
@@ -84,7 +84,7 @@ $res_b_programa_estudios = mysqli_fetch_array($busc_programa_estudios);
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <a href= programa_estudios1.php class="btn btn-success"> Cancelar </a>
+                          <a href= programa_estudios1.php class="btn btn-primary"> Cancelar </a>
 						              <button class="btn btn-primary" type="reset">Limpiar</button>
                           <button type="submit" class="btn btn-success">Guardar</button>
                         </div>

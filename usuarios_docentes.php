@@ -70,7 +70,7 @@ include "include/verificar_sesion.php";
                           <td><?php echo $res_b_usuario_docente['id_docente']; ?></td>
                           <td><?php echo $res_b_usuario_docente['usuario']; ?></td>
                           <td>
-                          <a href="operaciones/eliminar_usu_docente.php?id=<?php echo $res_b_usuario_docente['id']; ?>" class="btn btn-danger">Eliminar</a>
+                          <a href="editar_usuario_docente.php?id=<?php echo $res_b_usuario_docente['id']; ?>" class="btn btn-primary">Editar</a>
                           </td>
                         </tr>
                         <?php
